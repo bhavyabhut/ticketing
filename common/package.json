@@ -1,5 +1,5 @@
 {
-  "name": "cygnetops/common",
+  "name": "@cygnetops/common",
   "version": "1.0.21",
   "description": "",
   "main": "./build/index.js",
