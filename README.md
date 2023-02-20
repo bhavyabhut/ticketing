@@ -1,6 +1,6 @@
 # 🎫 Ticketing App
 
-This is a microservice-based architecture for a ticketing app. The app allows users to post tickets, and other users can place orders to purchase those tickets with actual payment. The app is built using Docker, Next.js, Kubernetes, Express, Node.js, TypeScript, React, Stripe.js, MongoDB, Redis, Nats Streaming Server, Bull.js, and JWT for auth.
+This is a microservice-based architecture for a ticketing app. The app allows users to post tickets, and other users can place orders to purchase those tickets with actual payment.
 
 ## Technologies Used
 
