@@ -1,12 +1,6 @@
-apiVersion: skaffold/v2alpha3
+apiVersion: skaffold/v2beta15
 kind: Config
-deploy:
-  kubectl:
-    manifests:
-      - ./infra/k8s/*
 build:
-  local:
-    push: false
   artifacts:
     - image: bbhutsaltside/auth
       context: auth
@@ -56,3 +50,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
