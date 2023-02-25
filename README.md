@@ -74,7 +74,7 @@ Docker and Kubernetes are used for deployment, and Skaffold is used for developm
 
 ## Getting Started
 
-To get started, follow the instructions in the README for each microservice.
+
 
 
 ## License
