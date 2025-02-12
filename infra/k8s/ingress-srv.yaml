@@ -4,91 +4,45 @@ metadata:
   name: ingress-service
   namespace: akuity
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: 192-168-1-236.nip.io
-      http:
-        paths:
-          - path: /api/payments/
-            pathType: Prefix
-            backend:
-              service:
-                name: payments-srv
-                port:
-                  number: 3000
-          - path: /api/users/
-            pathType: Prefix
-            backend:apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress-service
-  namespace: akuity
-  annotations:
-    kubernetes.io/ingress.class: nginx
-spec:
-  rules:
-    - host: 192-168-1-236.nip.io
-      http:
-        paths:
-          - path: /api/payments/
-            pathType: Prefix
-            backend:
-              service:
-                name: payments-srv
-                port:
-                  number: 3000
-          - path: /api/users/
-            pathType: Prefix
-            backend:
-              service:
-                name: auth-srv
-                port:
-                  number: 3000
-          - path: /api/tickets/
-            pathType: Prefix
-            backend:
-              service:
-                name: tickets-srv
-                port:
-                  number: 3000
-          - path: /api/orders/
-            pathType: Prefix
-            backend:
-              service:
-                name: orders-srv
-                port:
-                  number: 3000
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: client-srv
-                port:
-                  number: 3000
-
-              service:
-                name: auth-srv
-                port:
-                  number: 3000
-          - path: /api/tickets/
-            pathType: Prefix
-            backend:
-              service:
-                name: tickets-srv
-                port:
-                  number: 3000
-          - path: /api/orders/
-            pathType: Prefix
-            backend:
-              service:
-                name: orders-srv
-                port:
-                  number: 3000
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: client-srv
-                port:
-                  number: 3000
+  - host: 192-168-1-236.nip.io
+    http:
+      paths:
+      - path: /api/payments/
+        pathType: Prefix
+        backend:
+          service:
+            name: payments-srv
+            port:
+              number: 3000
+      - path: /api/users/
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-srv
+            port:
+              number: 3000
+      - path: /api/tickets/
+        pathType: Prefix
+        backend:
+          service:
+            name: tickets-srv
+            port:
+              number: 3000
+      - path: /api/orders/
+        pathType: Prefix
+        backend:
+          service:
+            name: orders-srv
+            port:
+              number: 3000
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: client-srv
+            port:
+              number: 3000
